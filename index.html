@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Задание №6 – Основы веб‑разработки</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>Задание №6: Основы веб‑разработки</h1>
+        <p class="subtitle">HTML • CSS • JavaScript</p>
+      </div>
+      <button id="themeToggle" class="btn btn--secondary" type="button">
+        Переключить тему
+      </button>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="card">
+      <h2>1. Структура страницы (HTML)</h2>
+      <p>
+        Эта страница демонстрирует базовую разметку HTML с заголовками, абзацами и списками.
+        Ниже приведён короткий план обучения фронтенду.
+      </p>
+
+      <article>
+        <h3>План обучения фронтенду</h3>
+        <p>
+          Рекомендуемая последовательность шагов для изучения веб‑разработки:
+        </p>
+        <ul id="learningList" class="learning-list">
+          <li><strong>HTML</strong> – структура документа, теги, атрибуты.</li>
+          <li><strong>CSS</strong> – стилизация, Flexbox, адаптивность.</li>
+          <li><strong>JavaScript</strong> – язык программирования для браузера.</li>
+          <li>Работа с <strong>DOM</strong> – изменение содержимого страницы из кода.</li>
+          <li>Фреймворки (React/Vue/etc.) – по желанию, после освоения базиса.</li>
+        </ul>
+        <button id="togglePlan" class="btn btn--primary" type="button">
+          Скрыть план
+        </button>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>2. Оформление страницы (CSS)</h2>
+      <p>
+        Для этой страницы используется отдельный файл <code>styles.css</code>, где описаны:
+      </p>
+      <ol>
+        <li>Базовая типографика и цвета.</li>
+        <li>Карточная верстка контента.</li>
+        <li>Кнопки с разными стилями.</li>
+        <li>Адаптивность контейнера.</li>
+      </ol>
+      <p>
+        Попробуйте изменить стили в файле <code>styles.css</code> и обновить страницу в браузере.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>3. Интерактивность (JavaScript)</h2>
+      <p>
+        JavaScript позволяет реагировать на действия пользователя: клики, ввод текста и многое другое.
+        Ниже представлены два простых интерактивных примера.
+      </p>
+
+      <div class="interactive-block">
+        <div class="counter">
+          <p>Кликов по кнопке: <span id="clickCount">0</span></p>
+          <button id="incrementBtn" class="btn btn--primary" type="button">Нажми меня</button>
+        </div>
+
+        <div class="message-block">
+          <p id="messageText">Сообщение пока не изменено.</p>
+          <button id="changeTextBtn" class="btn btn--outline" type="button">
+            Изменить текст
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 • Задание №6. Освоение основ HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

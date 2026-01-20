@@ -1,50 +1,41 @@
-// script.js — интерактивность для задания №6
+// script.js - Обновленные скрипты для TravelVibe
 
-// Переключение темы (светлая / тёмная)
-const themeToggleBtn = document.querySelector('#themeToggle');
-const body = document.body;
+// Активация навигации
+const navLinks = document.querySelectorAll('.nav-link');
 
-if (themeToggleBtn) {
-  themeToggleBtn.addEventListener('click', () => {
-    body.classList.toggle('light-theme');
-    themeToggleBtn.textContent = body.classList.contains('light-theme')
-      ? 'Переключить на тёмную тему'
-      : 'Переключить тему';
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    navLinks.forEach(l => l.classList.remove('active'));
+    e.target.classList.add('active');
+  });
+});
+
+// Кнопка Continue
+const continueBtn = document.querySelector('.btn--continue');
+if (continueBtn) {
+  continueBtn.addEventListener('click', () => {
+    alert('🂨 Спасибо за интерес! \n\nВскоре мы откроем регистрацию и каталог туров!');
   });
 }
 
-// Показ / скрытие плана обучения
-const togglePlanBtn = document.querySelector('#togglePlan');
-const learningList = document.querySelector('#learningList');
+// Интерактивность для пунктов туров
+const tourItems = document.querySelectorAll('.tours-list li');
 
-if (togglePlanBtn && learningList) {
-  togglePlanBtn.addEventListener('click', () => {
-    const isHidden = learningList.classList.toggle('hidden');
-    togglePlanBtn.textContent = isHidden ? 'Показать план' : 'Скрыть план';
+tourItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const text = item.textContent;
+    alert(`💫 Вы выбрали: ${text}\n\nХотите узнать больше? Напишите нам!`);
   });
-}
+});
 
-// Счётчик кликов
-const incrementBtn = document.querySelector('#incrementBtn');
-const clickCountSpan = document.querySelector('#clickCount');
+// Плавная анимация на скролл
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.site-header');
+  if (window.scrollY > 50) {
+    header.style.background = 'rgba(15, 23, 42, 0.95)';
+  } else {
+    header.style.background = 'rgba(15, 23, 42, 0.6)';
+  }
+});
 
-let clickCount = 0;
-
-if (incrementBtn && clickCountSpan) {
-  incrementBtn.addEventListener('click', () => {
-    clickCount += 1;
-    clickCountSpan.textContent = String(clickCount);
-  });
-}
-
-// Изменение текста сообщения
-const changeTextBtn = document.querySelector('#changeTextBtn');
-const messageText = document.querySelector('#messageText');
-
-if (changeTextBtn && messageText) {
-  changeTextBtn.addEventListener('click', () => {
-    messageText.textContent =
-      'Текст был изменён с помощью JavaScript по клику на кнопку.';
-    messageText.classList.add('highlighted');
-  });
-}
+console.log('🂨 TravelVibe - Туристическое агентство готово к работе!');
